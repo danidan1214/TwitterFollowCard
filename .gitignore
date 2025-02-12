@@ -22,3 +22,30 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+package-lock.json
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Directorios de construcción/producción
+/build
+/coverage
+
+# Archivos de caché
+.cache
+.parcel-cache
+
+# Archivos temporales
+.temp
+.tmp
+
+# Dependencias específicas de React
+/.pnp
+.pnp.js
+
+# Testing
+/coverage

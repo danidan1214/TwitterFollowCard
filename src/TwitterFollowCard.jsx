@@ -1,25 +1,29 @@
 import { useState } from "react";
+
 export function TwitterFollowCard({
   children,
   userName = "unknown",
-  initialIsFollowing
+  initialIsFollowing,
 }) {
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
+
+  const handleClick = () => {
+    setIsFollowing((prev) => !prev);
+  };
+
   const imageSrc = `https://unavatar.io/${userName}`;
   const text = isFollowing ? "Siguiendo" : "Seguir";
   const buttonClassName = isFollowing
     ? "tw-followCard-button is-following"
     : "tw-followCard-button";
-  const handleClick = () => {
-    setIsFollowing(!isFollowing);
-  };
+
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
         <img
           className="tw-followCard-avatar"
           src={imageSrc}
-          alt={`Avatar de ${children}`}
+          alt={`Avatar de ${userName}`}
         />
         <div className="tw-followCard-info">
           <strong>{children}</strong>
